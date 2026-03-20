@@ -22,5 +22,5 @@ audit agent
 ## Installation
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/USER/audit/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/AlKurpiakov/audit/main/install.sh | bash
 ```

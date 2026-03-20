@@ -2,7 +2,7 @@
 
 set -e
 
-REPO="https://github.com/AlKurpiakov/audice"
+REPO="https://github.com/AlKurpiakov/audit"
 INSTALL_DIR="$HOME/.audit"
 BIN_DIR="/usr/local/bin"
 TMP_DIR="/tmp/audite_install"
