@@ -54,7 +54,7 @@ echo
 rm -rf $INSTALL_DIR
 mkdir -p $INSTALL_DIR
 
-cp -r $TMP_DIR/* $INSTALL_DIR/
+cp -r "$TMP_DIR/." "$INSTALL_DIR/"
 rm -rf $TMP_DIR
 
 chmod +x $INSTALL_DIR/audit
