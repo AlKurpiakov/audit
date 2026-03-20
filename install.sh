@@ -52,12 +52,12 @@ echo "Installing files"
 echo
 
 rm -rf $INSTALL_DIR
-mkdir $INSTALL_DIR
+mkdir -p $INSTALL_DIR
 
-cp $TMP_DIR/* $INSTALL_DIR
+cp -r $TMP_DIR/* $INSTALL_DIR
 rm -rf $TMP_DIR
 
-chmode +x $INSTALL_DIR/audit
+chmod +x $INSTALL_DIR/audit
 
 
 echo "Creatiing config files"
