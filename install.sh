@@ -34,7 +34,7 @@ check_dependency git
 check_dependency awk
 check_dependency ps
 check_dependency ss
-check_dependency mail
+check_dependency mailutils
 
 echo "Dependencies OK"
 echo 
