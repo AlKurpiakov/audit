@@ -39,5 +39,7 @@ run_dashboard() {
 
 		generate_cpu_graph
 
+		sleep 2
+
 	done
 }
