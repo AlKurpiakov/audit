@@ -31,7 +31,7 @@ echo "Checking dependencies..."
 echo
 
 check_dependency git
-check_dependency aws
+check_dependency awk
 check_dependency ps
 check_dependency ss
 check_dependency mail
