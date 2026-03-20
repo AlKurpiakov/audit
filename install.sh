@@ -63,8 +63,6 @@ chmod +x $INSTALL_DIR/audit
 echo "Creatiing config files"
 echo
 
-mkdir -p $INSTALL_DIR
-
 CFG_FILE="$INSTALL_DIR/config"
 
 cat << EOF > $CFG_FILE
