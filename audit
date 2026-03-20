@@ -11,8 +11,6 @@ source "$SCRIPT_DIR/modules/processes.sh"
 source "$SCRIPT_DIR/core/metrics.sh"
 source "$SCRIPT_DIR/core/alerts.sh"
 
-source "$SCRIPT_DIR/agent/agent.sh"
-
 source "$SCRIPT_DIR/utils/ascii_cpu.sh"
 
 source "$SCRIPT_DIR/tui/dashboard.sh"
