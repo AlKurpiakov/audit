@@ -1,5 +1,5 @@
-get_meory_usage(){
+get_memory_usage(){
 
-	free | awk '/Mem:/ {printf("%.0f"), $3/$2 * 100}'
+	free | awk '/Mem:/ {printf("%.0f", $3/$2 * 100)}'
 
 }
