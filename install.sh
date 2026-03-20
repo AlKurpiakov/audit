@@ -18,13 +18,13 @@ check_dependency(){
 		elif command -v pacman >/dev/null 2>&1; then
                 	sudo pacman install -y $1
 		else
-			echo "Install $1 manualy"
+			echo "Install $1 manually"
 			exit 1
 		fi
 	fi
 }
 
-echo "Audite installation:"
+echo "Audit installation:"
 echo
 
 echo "Checking dependencies..."
@@ -60,7 +60,7 @@ rm -rf $TMP_DIR
 chmod +x $INSTALL_DIR/audit
 
 
-echo "Creatiing config files"
+echo "Creating config files"
 echo
 
 CFG_FILE="$INSTALL_DIR/config"
