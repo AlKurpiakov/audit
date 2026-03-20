@@ -1,0 +1,21 @@
+# logs
+*.log
+
+# temp files
+*.tmp
+*.swp
+
+# system
+.DS_Store
+
+# config
+.audit/config
+
+# metrics
+.audit/metrics.log
+
+# install temp
+/tmp/audit_install
+
+# binaries
+*.out

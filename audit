@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "(dirname "$0") && pwd)")"
+
+source "$SCRIPT_DIR/modules/cpu.sh"
+source "$SCRIPT_DIR/modules/memory.sh"
+source "$SCRIPT_DIR/modules/disk.sh"
+source "$SCRIPT_DIR/modules/ports.sh"
+source "$SCRIPT_DIR/modules/processes.sh"
+
+source "$SCRIPT_DIR/core/metrics.sh"
+source "$SCRIPT_DIR/core/alerts.sh"
+
+source "$SCRIPT_DIR/agent/agent.sh"
+
+source "$SCRIPT_DIR/utils/ascii_cpu.sh"
+
+source "$SCRIPT_DIR/tui/dashboard.sh"
+
+case "$1" in 
+	dashboard)
+	run_dashboard
+	;;
+
+	monitor)
+	monitor_loop
+	;;
+
+	ports)
+	show_ports
+	;;
+
+	processes)
+	show_processes
+	;;
+
+	agent)
+	bash "$SCRIPT_DIR/agent/agent.sh"
+	;;
+
+	*)
+	echo "Usage:"
+	echo "audit dashboard"
+	echo "audit monitor"
+	echo "audit ports"
+	echo "audit processes"
+	echo "audit agent"
+	;;
+
+esac
+ 
