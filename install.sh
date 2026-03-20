@@ -30,11 +30,11 @@ echo
 echo "Checking dependencies..."
 echo
 
-check_dependency(git)
-check_dependency(aws)
-check_dependency(ps)
-check_dependency(ss)
-check_dependency(mail)
+check_dependency git
+check_dependency aws
+check_dependency ps
+check_dependency ss
+check_dependency mail
 
 echo "Dependencies OK"
 echo 
