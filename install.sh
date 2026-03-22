@@ -56,12 +56,12 @@ rm -rf $TMP_DIR
 
 chmod +x $INSTALL_DIR/audit
 
-read -p "Enter your e-mail for alerts: " ALERT_EMAIL </dev/tty
-echo
 
 
 echo "Creating config files"
 echo
+
+read -p "Enter your e-mail for alerts: " ALERT_EMAIL </dev/tty
 
 CFG_FILE="$INSTALL_DIR/config"
 
