@@ -9,10 +9,23 @@ TMP_DIR="/tmp/audite_install"
 
 check_dependency(){
 	if ! command -v $1 >/dev/null 2>&1; then
+
 		echo "Installing dependency: $1"
+
+        if [ "$1" == "mailutils" ] && command -v apt >/dev/null 2>&1; then
+            echo "Configuring postfix for automatic install..."
+
+            echo "postfix postfix/main_mailer_type select Internet Site" | sudo debconf-set-selections
+
+            echo "postfix postfix/mailname string $(hostname -f)" | sudo debconf-set-selections
+            
+            export DEBIAN_FRONTEND=noninteractive
+        fi
+
+
 		if command -v apt >/dev/null 2>&1; then
 			sudo apt update
-			sudo apt install -y $1
+			sudo DEBIAN_FRONTEND=noninteractive apt install -y $1
 		elif command -v yum >/dev/null 2>&1; then
                 	sudo yum install -y $1
 		elif command -v pacman >/dev/null 2>&1; then
@@ -95,6 +108,7 @@ echo "Installing CLI"
 echo
 
 sudo ln -sf $INSTALL_DIR/audit $BIN_DIR/audit
+
 
 echo "Installation complete"
 echo

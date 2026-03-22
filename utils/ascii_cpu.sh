@@ -8,10 +8,10 @@ generate_cpu_graph() {
         cpu_int=${cpu%.*}
         [[ -z "$cpu_int" ]] && continue
         cpus+=("$cpu_int")
-    done < <(tail -40 "$METRICS_FILE")
+    done < <(tail -20 "$METRICS_FILE")
 
-    for (( row=5; row>=1; row-- )); do
-        threshold=$((row * 20))
+    for (( row=10; row>=1; row-- )); do
+        threshold=$((row * 10))
         printf "%4s%% | " "$threshold"
 
         for val in "${cpus[@]}"; do
