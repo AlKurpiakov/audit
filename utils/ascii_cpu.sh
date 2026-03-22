@@ -1,4 +1,5 @@
-METRICS_FILE="$HOME/.audit/metrics.log"
+AUDIT_DIR="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
+METRICS_FILE="$AUDIT_DIR/metrics.log"
 
 generate_cpu_graph() {
     cpus=()

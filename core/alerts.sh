@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-CFG="$HOME/.audit/config"
+AUDIT_DIR="$(dirname "$(dirname "$(realpath "${BASH_SOURCE[0]}")")")"
+CFG="$AUDIT_DIR/config"
 
 send_email() {
     local subject="$1"
