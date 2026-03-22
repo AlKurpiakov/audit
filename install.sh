@@ -42,7 +42,7 @@ echo
 echo "Cloning repository..."
 echo 
 
-rm -rf $TMP_DIR
+rm -rf "$TMP_DIR"
 git clone $REPO $TMP_DIR
 
 echo "Installing files"
@@ -56,7 +56,7 @@ rm -rf $TMP_DIR
 
 chmod +x $INSTALL_DIR/audit
 
-read -p "Enter your e-mail for alerts: " ALERT_EMAIL
+read -p "Enter your e-mail for alerts: " ALERT_EMAIL </dev/tty
 echo
 
 
