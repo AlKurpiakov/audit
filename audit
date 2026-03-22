@@ -10,6 +10,7 @@ source "$SCRIPT_DIR/modules/processes.sh"
 
 source "$SCRIPT_DIR/core/metrics.sh"
 source "$SCRIPT_DIR/core/alerts.sh"
+source "$SCRIPT_DIR/core/monitor.sh"
 
 source "$SCRIPT_DIR/utils/ascii_cpu.sh"
 

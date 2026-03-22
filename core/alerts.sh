@@ -33,19 +33,23 @@ check_alerts() {
     MEM_ALERT=${MEM_ALERT:-90}
     DISK_ALERT=${DISK_ALERT:-90}
 
-    if [ "$cpu" -gt "$CPU_ALERT" ]; then
+    local cpu_int=${cpu%.*}
+    local mem_int=${mem%.*}
+    local disk_int=${disk%.*}
+
+    if [ "$cpu_int" -gt "$CPU_ALERT" ]; then
         msg="High CPU usage: $cpu%"
         echo "$msg"
         send_email "Audit CPU alert" "$msg"
     fi
 
-    if [ "$mem" -gt "$MEM_ALERT" ]; then
+    if [ "$mem_int" -gt "$MEM_ALERT" ]; then
         msg="High MEM usage: $mem%"
         echo "$msg"
         send_email "Audit MEM alert" "$msg"
     fi
 
-    if [ "$disk" -gt "$DISK_ALERT" ]; then
+    if [ "$disk_int" -gt "$DISK_ALERT" ]; then
         msg="High DISK usage: $disk%"
         echo "$msg"
         send_email "Audit DISK alert" "$msg"

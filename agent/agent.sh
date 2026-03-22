@@ -1,6 +1,6 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 
-BASE_DIR="$HOME/.audit"
+BASE_DIR="$(dirname "$(dirname "$(realpath "$0")")")"
 
 source "$BASE_DIR/modules/cpu.sh"
 source "$BASE_DIR/modules/memory.sh"
