@@ -39,9 +39,6 @@ check_dependency mailutils
 echo "Dependencies OK"
 echo 
 
-read -p "Enter your e-mail for alerts: " EMAIL
-echo
-
 echo "Cloning repository..."
 echo 
 
@@ -59,14 +56,17 @@ rm -rf $TMP_DIR
 
 chmod +x $INSTALL_DIR/audit
 
+read -p "Enter your e-mail for alerts: " ALERT_EMAIL
+echo
+
 
 echo "Creating config files"
 echo
 
 CFG_FILE="$INSTALL_DIR/config"
 
-cat << EOF > $CFG_FILE
-EMAIL=$EMAIL
+cat << EOF > "$CFG_FILE"
+EMAIL=$ALERT_EMAIL
 CPU_ALERT=90
 MEM_ALERT=90
 DISK_ALERT=90

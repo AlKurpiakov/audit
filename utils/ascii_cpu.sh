@@ -1,13 +1,32 @@
 METRICS_FILE="$HOME/.audit/metrics.log"
 
 generate_cpu_graph() {
+    cpus=()
 
-	tail -20 $METRICS_FILE | while IFS=',' read t cpu mem disk
-	do
-		bars=$((cpu / 5))
-		line=""
-		for ((i=0;i<bars;i++)); do line="${line}█"; done
-		printf "%3s%% %s\n" "$cpu" "$line"
-	done
+    while IFS=',' read -r t cpu mem disk; do
+        cpu_int=${cpu%.*}
+        [[ -z "$cpu_int" ]] && continue
+        cpus+=("$cpu_int")
+    done < <(tail -40 "$METRICS_FILE")
 
+    for (( row=5; row>=1; row-- )); do
+        threshold=$((row * 20))
+        printf "%4s%% | " "$threshold"
+
+        for val in "${cpus[@]}"; do
+            if (( val >= threshold )); then
+                printf "█"
+            else
+                printf " "
+            fi
+        done
+        printf "\n"
+    done
+
+    printf "      |-"
+    for val in "${cpus[@]}"; do
+        printf "-"
+    done
+    printf "\n"
 }
+
