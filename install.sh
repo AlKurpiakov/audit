@@ -19,7 +19,6 @@ check_dependency(){
 
             echo "postfix postfix/mailname string $(hostname -f)" | sudo debconf-set-selections
             
-            export DEBIAN_FRONTEND=noninteractive
         fi
 
 
